@@ -148,11 +148,13 @@ function Accessibility() {
       </button>
 
       {isOpen && (
-        <div className="accessibility-menu">
-          <div className="accessibility-header">
-            <h3>כלי נגישות</h3>
-            <button onClick={() => setIsOpen(false)} className="close-btn">×</button>
-          </div>
+        <>
+          <div className="accessibility-overlay" onClick={() => setIsOpen(false)}></div>
+          <div className="accessibility-menu">
+            <div className="accessibility-header">
+              <h3>כלי נגישות</h3>
+              <button onClick={() => setIsOpen(false)} className="close-btn">×</button>
+            </div>
 
           <div className="accessibility-options">
             {/* Mode Cards Grid */}
@@ -274,6 +276,7 @@ function Accessibility() {
             </div>
           </div>
         </div>
+        </>
       )}
     </>
   );
