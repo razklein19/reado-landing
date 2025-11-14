@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Accessibility() {
   const [isOpen, setIsOpen] = useState(false);
@@ -266,10 +267,10 @@ function Accessibility() {
                 <span className="card-label">איפוס הגדרות</span>
               </button>
 
-              <a href="/accessibility" className="accessibility-card accessibility-link">
+              <Link to="/accessibility" className="accessibility-card accessibility-link">
                 <span className="card-icon">📋</span>
                 <span className="card-label">הצהרת נגישות</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

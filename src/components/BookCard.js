@@ -102,7 +102,7 @@ function BookCard({ book }) {
         <div className={`book-audio-player ${isHovered ? 'visible' : ''}`}>
           <button className="audio-play-btn" onClick={handlePlayPause}>
             <img
-              src={isPlaying ? '/images/pause-play.png' : '/images/play.png'}
+              src={isPlaying ? `${process.env.PUBLIC_URL}/images/pause-play.png` : `${process.env.PUBLIC_URL}/images/play.png`}
               alt={isPlaying ? 'Pause' : 'Play'}
               className="audio-btn-icon"
             />
