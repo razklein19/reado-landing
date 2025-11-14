@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/reado-landing/static/css/main.ab758f7b.css",
-    "main.js": "/reado-landing/static/js/main.5b7dcedb.js",
+    "main.js": "/reado-landing/static/js/main.db417b06.js",
     "static/js/453.6a0daced.chunk.js": "/reado-landing/static/js/453.6a0daced.chunk.js",
     "index.html": "/reado-landing/index.html",
     "main.ab758f7b.css.map": "/reado-landing/static/css/main.ab758f7b.css.map",
-    "main.5b7dcedb.js.map": "/reado-landing/static/js/main.5b7dcedb.js.map",
+    "main.db417b06.js.map": "/reado-landing/static/js/main.db417b06.js.map",
     "453.6a0daced.chunk.js.map": "/reado-landing/static/js/453.6a0daced.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ab758f7b.css",
-    "static/js/main.5b7dcedb.js"
+    "static/js/main.db417b06.js"
   ]
 }
