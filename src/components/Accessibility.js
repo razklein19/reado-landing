@@ -143,7 +143,7 @@ function Accessibility() {
         onClick={() => setIsOpen(!isOpen)}
         aria-label="נגישות"
       >
-        <img src="/images/accessibility-icon.png" alt="נגישות" className="accessibility-icon" />
+        <img src={`${process.env.PUBLIC_URL}/images/accessibility-icon.png`} alt="נגישות" className="accessibility-icon" />
       </button>
 
       {isOpen && (

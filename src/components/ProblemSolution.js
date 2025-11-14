@@ -15,7 +15,7 @@ function ProblemSolution() {
         <div className="ps-content">
           <div className="ps-column">
             <div className="ps-icon-wrapper problem-icon">
-              <img src="/images/brain-error-icon.png" alt="לפני Reado" className="ps-icon-img" />
+              <img src={`${process.env.PUBLIC_URL}/images/brain-error-icon.png`} alt="לפני Reado" className="ps-icon-img" />
             </div>
             <h3>לפני Reado</h3>
             <div className="ps-list">
@@ -40,13 +40,13 @@ function ProblemSolution() {
 
           <div className="ps-divider">
             <div className="arrow">
-              <img src="/images/arrow-icon.png" alt="arrow" className="arrow-img" />
+              <img src={`${process.env.PUBLIC_URL}/images/arrow-icon.png`} alt="arrow" className="arrow-img" />
             </div>
           </div>
 
           <div className="ps-column">
             <div className="ps-icon-wrapper solution-icon">
-              <img src="/images/growth-tree-icon.png" alt="עם Reado" className="ps-icon-img" />
+              <img src={`${process.env.PUBLIC_URL}/images/growth-tree-icon.png`} alt="עם Reado" className="ps-icon-img" />
             </div>
             <h3>עם Reado</h3>
             <div className="ps-list">

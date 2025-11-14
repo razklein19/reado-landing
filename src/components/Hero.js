@@ -16,7 +16,7 @@ function Hero() {
         </div>
         <div className="hero-video">
           <video controls playsInline webkit-playsinline preload="auto" autoPlay muted>
-            <source src="/images/reado-demo.mp4" type="video/mp4" />
+            <source src={`${process.env.PUBLIC_URL}/images/reado-demo.mp4`} type="video/mp4" />
             הדפדפן שלך אינו תומך בווידאו
           </video>
         </div>

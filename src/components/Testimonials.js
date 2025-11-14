@@ -69,7 +69,7 @@ function Testimonials() {
             <div key={index} className="testimonial-card">
               <div className="testimonial-header">
                 <div className="testimonial-avatar" style={{ background: testimonial.color }}>
-                  <img src="/images/user-icon.png" alt="User" className="avatar-icon" />
+                  <img src={`${process.env.PUBLIC_URL}/images/user-icon.png`} alt="User" className="avatar-icon" />
                 </div>
                 <div className="testimonial-info">
                   <h4>{testimonial.name}</h4>

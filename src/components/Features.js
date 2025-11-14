@@ -6,21 +6,21 @@ function Features() {
 
   const features = [
     {
-      icon: '/images/audiobook-icon.png',
+      icon: `${process.env.PUBLIC_URL}/images/audiobook-icon.png`,
       title: 'קראו או האזינו לתובנות המרכזיות',
       description: 'כ־15 דקות שמרכזות את התובנות מהספרים הטובים בעולם.',
       isImage: true,
       noBackground: true
     },
     {
-      icon: '/images/roadmap-icon.png',
+      icon: `${process.env.PUBLIC_URL}/images/roadmap-icon.png`,
       title: 'תרגולים אינטראקטיביים',
       description: 'תרגולים קצרים ומהנים שיעזרו לך לזכור, להבין וליישם את מה שלמדת',
       isImage: true,
       noBackground: true
     },
     {
-      icon: '/images/plan-icon.png',
+      icon: `${process.env.PUBLIC_URL}/images/plan-icon.png`,
       title: 'תוכנית פעולה אישית (בקרוב)',
       description: 'תוכנית פעולה מותאמת למטרות, לאתגרים ולחיי היום־יום שלך – מבוססת על הסיכום שקראת.',
       isImage: true,
@@ -34,7 +34,7 @@ function Features() {
         <h2>השיטה של <span className="highlight-reado">Reado</span> שתעזור לך לעמוד <span className="underline-orange">במטרות שלך</span></h2>
         <div className="features-content">
           <div className="features-image">
-            <img src="/images/reado-phones-circle.png" alt="Reado App Preview" />
+            <img src={`${process.env.PUBLIC_URL}/images/reado-phones-circle.png`} alt="Reado App Preview" />
           </div>
           <div className="features-list">
             {features.map((feature, index) => (

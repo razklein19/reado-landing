@@ -34,7 +34,7 @@ function Header() {
       <div className="container">
         <nav>
           <Link to="/" className="logo">
-            <img src="/images/reado-logo.png" alt="Reado" className="logo-img" />
+            <img src={`${process.env.PUBLIC_URL}/images/reado-logo.png`} alt="Reado" className="logo-img" />
           </Link>
           <a href="https://reado-il.com" className="btn mobile-cta">התחל ניסיון חינם</a>
           <button
