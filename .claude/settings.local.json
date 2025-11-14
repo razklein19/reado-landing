@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm start)",
+      "Bash(ipconfig)",
+      "Bash(findstr:*)",
+      "Bash(ipconfig:*)",
+      "Bash(powershell.exe:*)",
+      "Bash(cmd.exe /c \"ipconfig | findstr IPv4\")",
+      "Bash(npx kill-port:*)",
+      "Bash(set:*)",
+      "Bash(HOST=0.0.0.0 npm start)",
+      "Bash(netstat:*)",
+      "Bash(ip addr:*)",
+      "Bash(awk:*)",
+      "Bash(npm install:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(dir \"C:\\Users\\razkl\\reado-landing\\public\\images\")",
+      "Bash(dir \"C:\\Users\\razkl\\reado-landing\\public\\images\\books\\audio\")",
+      "Bash(dir \"C:\\Users\\razkl\\reado-landing\\public\\images\" /b)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
