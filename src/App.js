@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -34,7 +34,7 @@ function HomePage() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/reado-landing">
       <div className="App">
         <div id="main-content">
           <Header />
