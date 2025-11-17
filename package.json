@@ -2,7 +2,7 @@
   "name": "reado-landing",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://razklein19.github.io/reado-landing",
+  "homepage": "https://reado.co.il",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
