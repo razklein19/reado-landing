@@ -34,7 +34,7 @@ function HomePage() {
 
 function App() {
   return (
-    <Router basename="/reado-landing">
+    <Router>
       <div className="App">
         <div id="main-content">
           <Header />
