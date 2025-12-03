@@ -81,7 +81,7 @@ function Topics() {
       audioUrl: `${process.env.PUBLIC_URL}/images/books/audio/subtle-art.wav`
     },
     {
-      title: 'חשוב הותעשר',
+      title: 'חשוב והתעשר',
       author: 'נפוליאון היל',
       image: `${process.env.PUBLIC_URL}/images/books/think-grow-rich.png`,
       categories: ['all', 'money', 'consciousness'],
