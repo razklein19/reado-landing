@@ -15,7 +15,7 @@ function Hero() {
           <p>הדרך הפשוטה ביותר <span className="underline-wavy">ללמוד וליישם</span> תובנות מספרי התפתחות אישית <span className="underline-wavy">בפחות מ-15 דקות</span> ביום.</p>
         </div>
         <div className="hero-video">
-          <video controls playsInline webkit-playsinline preload="auto" autoPlay muted>
+          <video controls playsInline webkit-playsinline preload="auto" autoPlay>
             <source src={`${process.env.PUBLIC_URL}/images/reado-demo.mp4`} type="video/mp4" />
             הדפדפן שלך אינו תומך בווידאו
           </video>
