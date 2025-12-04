@@ -21,7 +21,7 @@ function Features() {
     },
     {
       icon: `${process.env.PUBLIC_URL}/images/plan-icon.png`,
-      title: 'תוכנית פעולה אישית (בקרוב)',
+      title: 'תוכנית פעולה אישית',
       description: 'תוכנית פעולה מותאמת למטרות, לאתגרים ולחיי היום־יום שלך – מבוססת על הסיכום שקראת.',
       isImage: true,
       noBackground: true
