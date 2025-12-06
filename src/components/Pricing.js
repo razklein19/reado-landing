@@ -11,7 +11,10 @@ function Pricing() {
         <p className="pricing-subtitle">בחר את התוכנית המתאימה לך</p>
         <div className="pricing-grid">
           <div className="pricing-card">
-            <div className="popular-badge">הכי פופולרי</div>
+            <div className="popular-badge">
+              <img src={`${process.env.PUBLIC_URL}/images/star.png`} alt="" className="badge-icon" />
+              הכי פופולרי
+            </div>
             <h3>חודשי</h3>
             <div className="price">
               <span className="amount">₪47</span>
@@ -29,7 +32,10 @@ function Pricing() {
           </div>
 
           <div className="pricing-card featured">
-            <div className="popular-badge">הכי משתלם</div>
+            <div className="popular-badge">
+              <img src={`${process.env.PUBLIC_URL}/images/flame.png`} alt="" className="badge-icon" />
+              הכי משתלם
+            </div>
             <h3>שנתי</h3>
             <div className="price">
               <span className="amount">₪423</span>
