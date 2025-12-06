@@ -14,7 +14,7 @@ function Pricing() {
             <div className="popular-badge">עד סוף שנה</div>
             <h3>חודשי</h3>
             <div className="price">
-              <span className="amount">₪27</span>
+              <span className="amount">₪47</span>
               <span className="period">/חודש</span>
             </div>
             <ul className="pricing-features">
@@ -32,7 +32,7 @@ function Pricing() {
             <div className="popular-badge">עד סוף שנה</div>
             <h3>שנתי</h3>
             <div className="price">
-              <span className="amount">₪243</span>
+              <span className="amount">₪423</span>
               <span className="period">/שנה</span>
             </div>
             <p className="save-text">חסוך 25% - 3 חודשים מתנה</p>
@@ -47,19 +47,6 @@ function Pricing() {
             <a href="https://reado-il.com" className="btn">התחל ניסיון חינם</a>
           </div>
 
-          <div className="pricing-card">
-            <h3>מחיר החל מ-1.1.2026</h3>
-            <div className="price">
-              <span className="amount">₪47</span>
-              <span className="period">/חודש</span>
-            </div>
-            <div className="price">
-              <span className="amount">₪423</span>
-              <span className="period">/שנה</span>
-            </div>
-            <p className="after-launch-text">התחל עכשיו במחיר מופחת, ושמור על המחיר גם אחרי עליית המחירים.</p>
-            <a href="https://reado-il.com" className="btn">התחל 7 ימי ניסיון</a>
-          </div>
         </div>
       </div>
     </section>
