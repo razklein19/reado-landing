@@ -2,6 +2,17 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Related Repositories
+
+This project is part of the Reado product and works alongside:
+
+- **Landing page** (this repo): `C:\Users\razkl\reado-landing` — reado.co.il
+- **Main app** (mind-growth-oasis): `C:\Users\razkl\mind-growth-oasis` — GitHub: https://github.com/razklein19/mind-growth-oasis.git — reado-il.com
+
+When working on this project, you have access to both repos and should consider changes in the context of both.
+
+---
+
 ## Project Overview
 
 This is a landing page for Reado, a Hebrew-language platform for book summaries and educational content. The site is built with Create React App and features a single-page design with multiple sections showcasing the product.

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-function Features() {
+function Features({ onOpenQuestionnaire }) {
   const [ref, isVisible] = useScrollAnimation(0.1);
 
   const features = [
@@ -55,7 +55,7 @@ function Features() {
           </div>
         </div>
         <div className="features-cta">
-          <a href="https://reado-il.com" className="btn btn-primary">התחל ניסיון חינם</a>
+          <button className="btn btn-primary" onClick={onOpenQuestionnaire}>התחל ניסיון חינם</button>
         </div>
       </div>
     </section>

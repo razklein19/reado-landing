@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-function Hero() {
+function Hero({ onOpenQuestionnaire }) {
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -74,7 +74,7 @@ function Hero() {
           </video>
         </div>
         <div className="hero-cta">
-          <a href="https://reado-il.com" className="btn">התחל בחינם</a>
+          <button className="btn" onClick={onOpenQuestionnaire}>התחל בחינם</button>
         </div>
       </div>
     </section>

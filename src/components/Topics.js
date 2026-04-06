@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import BookCard from './BookCard';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-function Topics() {
+function Topics({ onOpenQuestionnaire }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [ref, isVisible] = useScrollAnimation(0.1);
 
@@ -164,7 +164,7 @@ function Topics() {
         </div>
 
         <div className="topics-cta">
-          <a href="https://reado-il.com" className="btn">התחל עם הספר הראשון</a>
+          <button className="btn" onClick={onOpenQuestionnaire}>התחל עם הספר הראשון</button>
         </div>
       </div>
     </section>

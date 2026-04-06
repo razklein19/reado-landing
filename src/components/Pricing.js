@@ -1,7 +1,7 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-function Pricing() {
+function Pricing({ onOpenQuestionnaire }) {
   const [ref, isVisible] = useScrollAnimation(0.1);
 
   return (
@@ -28,7 +28,7 @@ function Pricing() {
               <li>✓ תוכנית פעולה אישית</li>
               <li>✓ ללא התחייבות</li>
             </ul>
-            <a href="https://reado-il.com" className="btn">התחל ניסיון חינם</a>
+            <button className="btn" onClick={onOpenQuestionnaire}>התחל ניסיון חינם</button>
           </div>
 
           <div className="pricing-card featured">
@@ -50,7 +50,7 @@ function Pricing() {
               <li>✓ תוכנית פעולה אישית</li>
               <li>✓ ללא התחייבות</li>
             </ul>
-            <a href="https://reado-il.com" className="btn">התחל ניסיון חינם</a>
+            <button className="btn" onClick={onOpenQuestionnaire}>התחל ניסיון חינם</button>
           </div>
 
         </div>

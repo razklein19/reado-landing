@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -16,39 +16,70 @@ import CookieConsent from './components/CookieConsent';
 import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import AccessibilityStatement from './components/AccessibilityStatement';
+import Questionnaire from './components/Questionnaire';
+import LoginModal from './components/LoginModal';
 
 function HomePage() {
+  const navigate = useNavigate();
+  const openQuestionnaire = () => navigate('/questionnaire');
+
   return (
     <>
-      <Hero />
-      <Features />
+      <Hero onOpenQuestionnaire={openQuestionnaire} />
+      <Features onOpenQuestionnaire={openQuestionnaire} />
       <ProblemSolution />
-      <Topics />
+      <Topics onOpenQuestionnaire={openQuestionnaire} />
       <Testimonials />
-      <Pricing />
+      <Pricing onOpenQuestionnaire={openQuestionnaire} />
       <FAQ />
-      <CTA />
+      <CTA onOpenQuestionnaire={openQuestionnaire} />
     </>
+  );
+}
+
+function AppInner() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [showLogin, setShowLogin] = useState(false);
+  const isQuestionnaire = location.pathname === '/questionnaire';
+
+  if (isQuestionnaire) {
+    return (
+      <>
+        <div id="main-content">
+          <Questionnaire />
+        </div>
+        <Accessibility />
+      </>
+    );
+  }
+
+  return (
+    <div className="App">
+      <div id="main-content">
+        <Header
+          onOpenQuestionnaire={() => navigate('/questionnaire')}
+          onOpenLogin={() => setShowLogin(true)}
+        />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/accessibility" element={<AccessibilityStatement />} />
+        </Routes>
+        <Footer />
+      </div>
+      <Accessibility />
+      <CookieConsent />
+      {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
+    </div>
   );
 }
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <div id="main-content">
-          <Header />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/terms" element={<TermsOfService />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/accessibility" element={<AccessibilityStatement />} />
-          </Routes>
-          <Footer />
-        </div>
-        <Accessibility />
-        <CookieConsent />
-      </div>
+      <AppInner />
     </Router>
   );
 }
