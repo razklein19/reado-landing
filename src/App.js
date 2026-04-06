@@ -7,7 +7,6 @@ import ProblemSolution from './components/ProblemSolution';
 import Features from './components/Features';
 import Topics from './components/Topics';
 import Testimonials from './components/Testimonials';
-import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
@@ -30,7 +29,6 @@ function HomePage() {
       <ProblemSolution />
       <Topics onOpenQuestionnaire={openQuestionnaire} />
       <Testimonials />
-      <Pricing onOpenQuestionnaire={openQuestionnaire} />
       <FAQ />
       <CTA onOpenQuestionnaire={openQuestionnaire} />
     </>

@@ -50,7 +50,6 @@ function Header({ onOpenQuestionnaire, onOpenLogin }) {
             <span></span>
           </button>
           <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
-            <button onClick={() => handleNavClick('pricing')} className="nav-link-btn">מחירים</button>
             <button onClick={() => handleNavClick('faq')} className="nav-link-btn">שאלות נפוצות</button>
             <button onClick={() => handleNavClick('features')} className="nav-link-btn">מה זה Reado?</button>
             <div className="header-auth-btns">

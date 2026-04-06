@@ -32,7 +32,6 @@ function Footer() {
             <h4>מוצר</h4>
             <ul>
               <li><a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('features'); }}>מה זה Reado?</a></li>
-              <li><a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('pricing'); }}>מחירים</a></li>
               <li><a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}>שאלות תשובות</a></li>
               <li><a href="https://reado-il.com">התחל עכשיו</a></li>
             </ul>
