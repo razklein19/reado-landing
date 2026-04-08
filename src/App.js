@@ -54,7 +54,8 @@ function AppInner() {
 
   return (
     <div className="App">
-      <div id="main-content">
+      <a href="#main-content" className="skip-to-content">דלג לתוכן ראשי</a>
+      <div id="main-content" tabIndex={-1}>
         <Header
           onOpenQuestionnaire={() => navigate('/questionnaire')}
           onOpenLogin={() => setShowLogin(true)}
