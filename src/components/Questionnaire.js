@@ -448,6 +448,8 @@ function Questionnaire() {
     handleOAuthCallback();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  const appUrl = process.env.REACT_APP_MAIN_APP_URL || 'https://reado-il.com';
+
   const redirectToApp = (session) => {
     if (session?.access_token && session?.refresh_token) {
       const params = new URLSearchParams({
@@ -457,9 +459,9 @@ function Questionnaire() {
         expires_in:    String(session.expires_in || 3600),
         type:          'signup',
       });
-      window.location.href = `https://reado-il.com#${params.toString()}`;
+      window.location.href = `${appUrl}#${params.toString()}`;
     } else {
-      window.location.href = 'https://reado-il.com';
+      window.location.href = appUrl;
     }
   };
 
@@ -583,7 +585,7 @@ function Questionnaire() {
                   authError === 'EXISTS'
                     ? <p className="qp-auth-error">
                         משתמש עם אימייל זה כבר קיים.{' '}
-                        <a href="https://reado-il.com/auth" className="qp-auth-error-link">לחץ כאן להתחברות</a>
+                        <a href={`${appUrl}/auth`} className="qp-auth-error-link">לחץ כאן להתחברות</a>
                       </p>
                     : <p className="qp-auth-error">{authError}</p>
                 )}

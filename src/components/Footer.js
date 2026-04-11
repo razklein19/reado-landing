@@ -33,7 +33,7 @@ function Footer() {
             <ul>
               <li><a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('features'); }}>מה זה Reado?</a></li>
               <li><a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}>שאלות תשובות</a></li>
-              <li><a href="https://reado-il.com">התחל עכשיו</a></li>
+              <li><a href={process.env.REACT_APP_MAIN_APP_URL || 'https://reado-il.com'}>התחל עכשיו</a></li>
             </ul>
           </div>
           <div className="footer-column">

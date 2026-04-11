@@ -35,11 +35,42 @@ function HomePage() {
   );
 }
 
+function LoginCallback() {
+  const appUrl = process.env.REACT_APP_MAIN_APP_URL || 'https://reado-il.com';
+
+  React.useEffect(() => {
+    const handleCallback = async () => {
+      const { supabase } = await import('./supabaseClient');
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.access_token && session?.refresh_token) {
+        const params = new URLSearchParams({
+          access_token:  session.access_token,
+          refresh_token: session.refresh_token,
+          token_type:    session.token_type || 'bearer',
+          expires_in:    String(session.expires_in || 3600),
+          type:          'login',
+        });
+        window.location.href = `${appUrl}#${params.toString()}`;
+      } else {
+        window.location.href = appUrl;
+      }
+    };
+    handleCallback();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', direction: 'rtl' }}>מתחבר...</div>;
+}
+
 function AppInner() {
   const location = useLocation();
   const navigate = useNavigate();
   const [showLogin, setShowLogin] = useState(false);
   const isQuestionnaire = location.pathname === '/questionnaire';
+  const isLoginCallback = location.pathname === '/login-callback';
+
+  if (isLoginCallback) {
+    return <LoginCallback />;
+  }
 
   if (isQuestionnaire) {
     return (

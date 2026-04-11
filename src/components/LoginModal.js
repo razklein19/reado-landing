@@ -7,6 +7,8 @@ function LoginModal({ onClose }) {
   const [error, setError]       = useState('');
   const [loading, setLoading]   = useState(false);
 
+  const appUrl = process.env.REACT_APP_MAIN_APP_URL || 'https://reado-il.com';
+
   const redirectToApp = (session) => {
     if (session?.access_token && session?.refresh_token) {
       const params = new URLSearchParams({
@@ -16,9 +18,9 @@ function LoginModal({ onClose }) {
         expires_in:    String(session.expires_in || 3600),
         type:          'login',
       });
-      window.location.href = `https://reado-il.com#${params.toString()}`;
+      window.location.href = `${appUrl}#${params.toString()}`;
     } else {
-      window.location.href = 'https://reado-il.com';
+      window.location.href = appUrl;
     }
   };
 
