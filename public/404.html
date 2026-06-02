@@ -22,7 +22,10 @@
       // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
       // https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe
       // Otherwise, leave pathSegmentsToKeep as 0.
-      var pathSegmentsToKeep = 1;
+      // We deploy to a custom domain (CNAME reado.co.il), so 0 is correct.
+      // With 1 the script kept "privacy" as a real path segment and produced an
+      // infinite ~and~/~and~/~and~ redirect loop when users hit /privacy directly.
+      var pathSegmentsToKeep = 0;
 
       var l = window.location;
       l.replace(
