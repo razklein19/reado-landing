@@ -1,7 +1,8 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import AppStoreBadges from './AppStoreBadges';
 
-function Features({ onOpenQuestionnaire }) {
+function Features() {
   const [ref, isVisible] = useScrollAnimation(0.1);
 
   const features = [
@@ -22,9 +23,10 @@ function Features({ onOpenQuestionnaire }) {
     {
       icon: `${process.env.PUBLIC_URL}/images/plan-icon.png`,
       title: 'תוכנית פעולה אישית',
-      description: 'תוכנית פעולה מותאמת למטרות, לאתגרים ולחיי היום־יום שלך – מבוססת על הסיכום שקראת.',
+      description: 'תוכנית פעולה מותאמת למטרות ולחיי היום-יום שלך, שנבנית ביחד עם המנטור הדיגיטלי על בסיס הסיכומים שקראת.',
       isImage: true,
-      noBackground: true
+      noBackground: true,
+      comingSoon: true
     }
   ];
 
@@ -47,7 +49,10 @@ function Features({ onOpenQuestionnaire }) {
                   )}
                 </div>
                 <div className="feature-text">
-                  <h3>{feature.title}</h3>
+                  <h3>
+                    {feature.title}
+                    {feature.comingSoon && <span className="feature-coming-soon">בקרוב</span>}
+                  </h3>
                   <p>{feature.description}</p>
                 </div>
               </div>
@@ -55,7 +60,7 @@ function Features({ onOpenQuestionnaire }) {
           </div>
         </div>
         <div className="features-cta">
-          <button className="btn btn-primary" onClick={onOpenQuestionnaire}>התחל ניסיון חינם</button>
+          <AppStoreBadges />
         </div>
       </div>
     </section>

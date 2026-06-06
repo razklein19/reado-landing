@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import BookCard from './BookCard';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import AppStoreBadges from './AppStoreBadges';
 
-function Topics({ onOpenQuestionnaire }) {
+function Topics() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [ref, isVisible] = useScrollAnimation(0.1);
 
@@ -164,7 +165,7 @@ function Topics({ onOpenQuestionnaire }) {
         </div>
 
         <div className="topics-cta">
-          <button className="btn" onClick={onOpenQuestionnaire}>התחל עם הספר הראשון</button>
+          <AppStoreBadges />
         </div>
       </div>
     </section>

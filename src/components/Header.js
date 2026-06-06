@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
-function Header({ onOpenQuestionnaire, onOpenLogin }) {
+const APP_STORE_URL = 'https://apps.apple.com/app/reado/id6768102877';
+
+function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -9,10 +11,8 @@ function Header({ onOpenQuestionnaire, onOpenLogin }) {
   const handleNavClick = (sectionId) => {
     setMenuOpen(false);
 
-    // If we're not on the home page, navigate to home first
     if (location.pathname !== '/') {
       navigate('/');
-      // Wait for navigation to complete before scrolling
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -20,7 +20,6 @@ function Header({ onOpenQuestionnaire, onOpenLogin }) {
         }
       }, 100);
     } else {
-      // Already on home page, just scroll
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -37,8 +36,9 @@ function Header({ onOpenQuestionnaire, onOpenLogin }) {
             <img src={`${process.env.PUBLIC_URL}/images/reado-logo.png`} alt="Reado" className="logo-img" />
           </Link>
           <div className="header-auth-btns mobile-cta">
-            <button className="btn" onClick={onOpenQuestionnaire}>הרשמה</button>
-            <button className="btn-login" onClick={onOpenLogin}>התחברות</button>
+            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn">
+              הורד עכשיו
+            </a>
           </div>
           <button
             className="hamburger"
@@ -53,8 +53,9 @@ function Header({ onOpenQuestionnaire, onOpenLogin }) {
             <button onClick={() => handleNavClick('faq')} className="nav-link-btn">שאלות נפוצות</button>
             <button onClick={() => handleNavClick('features')} className="nav-link-btn">מה זה Reado?</button>
             <div className="header-auth-btns">
-              <button className="btn-login" onClick={onOpenLogin}>התחברות</button>
-              <button className="btn" onClick={onOpenQuestionnaire}>הרשמה</button>
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn">
+                הורד עכשיו
+              </a>
             </div>
           </div>
         </nav>

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
+import AppStoreBadges from './AppStoreBadges';
 
-function Hero({ onOpenQuestionnaire }) {
+function Hero() {
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -74,7 +75,7 @@ function Hero({ onOpenQuestionnaire }) {
           </video>
         </div>
         <div className="hero-cta">
-          <button className="btn" onClick={onOpenQuestionnaire}>התחל בחינם</button>
+          <AppStoreBadges />
         </div>
       </div>
     </section>

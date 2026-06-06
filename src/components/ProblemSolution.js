@@ -56,7 +56,7 @@ function ProblemSolution() {
               </div>
               <div className="ps-list-item highlight">
                 <span className="check">✓</span>
-                <p>מיישם את התובנות המרכזיות עם תוכנים פעולה אישית</p>
+                <p>מיישם את התובנות המרכזיות עם תוכנית פעולה אישית</p>
               </div>
               <div className="ps-list-item highlight">
                 <span className="check">✓</span>

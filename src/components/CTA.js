@@ -1,7 +1,8 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import AppStoreBadges from './AppStoreBadges';
 
-function CTA({ onOpenQuestionnaire }) {
+function CTA() {
   const [ref, isVisible] = useScrollAnimation(0.1);
 
   return (
@@ -9,7 +10,9 @@ function CTA({ onOpenQuestionnaire }) {
       <div className="container">
         <h2>התחל את תקופת הניסיון החינמית ל-7 ימים</h2>
         <p>הצטרף לעשרות אנשים שמיישמים תובנות משנות חיים מהספרים הכי טובים בעולם</p>
-        <button className="btn btn-white" onClick={onOpenQuestionnaire}>התחל בחינם</button>
+        <div className="cta-badges">
+          <AppStoreBadges variant="light" />
+        </div>
       </div>
     </section>
   );
