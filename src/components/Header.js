@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-
-const APP_STORE_URL = 'https://apps.apple.com/app/reado/id6768102877';
+import { getStoreUrl } from '../appLinks';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const storeUrl = getStoreUrl();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -36,7 +36,7 @@ function Header() {
             <img src={`${process.env.PUBLIC_URL}/images/reado-logo.png`} alt="Reado" className="logo-img" />
           </Link>
           <div className="header-auth-btns mobile-cta">
-            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn">
+            <a href={storeUrl} target="_blank" rel="noopener noreferrer" className="btn">
               הורד עכשיו
             </a>
           </div>
@@ -53,7 +53,7 @@ function Header() {
             <button onClick={() => handleNavClick('faq')} className="nav-link-btn">שאלות נפוצות</button>
             <button onClick={() => handleNavClick('features')} className="nav-link-btn">מה זה Reado?</button>
             <div className="header-auth-btns">
-              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn">
+              <a href={storeUrl} target="_blank" rel="noopener noreferrer" className="btn">
                 הורד עכשיו
               </a>
             </div>

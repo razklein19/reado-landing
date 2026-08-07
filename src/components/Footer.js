@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from '../appLinks';
 
 function Footer() {
   const navigate = useNavigate();
@@ -33,7 +34,8 @@ function Footer() {
             <ul>
               <li><a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('features'); }}>מה זה Reado?</a></li>
               <li><a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}>שאלות תשובות</a></li>
-              <li><a href="https://apps.apple.com/app/reado/id6768102877" target="_blank" rel="noopener noreferrer">הורד מ-App Store</a></li>
+              <li><a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">הורד מ-App Store</a></li>
+              <li><a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer">הורד מ-Google Play</a></li>
             </ul>
           </div>
           <div className="footer-column">

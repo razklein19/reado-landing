@@ -3361,16 +3361,6 @@ body.stop-animations *::after {
   letter-spacing: -0.01em;
 }
 
-.app-badge.disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.app-badge.disabled:hover {
-  transform: none;
-  box-shadow: none;
-}
-
 .app-badges-light .app-badge {
   background: #fff;
   color: #111;
