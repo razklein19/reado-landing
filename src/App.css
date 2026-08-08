@@ -147,6 +147,84 @@ nav {
   gap: 10px;
 }
 
+/* תפריט בחירת חנות — מוצג רק בדסקטופ, שם לא ניתן לזהות את סוג המכשיר */
+.store-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.store-menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+}
+
+.store-menu-caret {
+  font-size: 12px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.store-menu-caret.is-open {
+  transform: rotate(180deg);
+}
+
+.store-menu-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 210px;
+  z-index: 1100;
+}
+
+.store-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: background 0.2s ease;
+}
+
+.store-menu-item:hover {
+  background: #f2f2f2;
+}
+
+.store-menu-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.store-menu-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.store-menu-prefix {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.store-menu-store {
+  font-size: 15px;
+  font-weight: 600;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -1998,6 +2076,16 @@ body.high-contrast {
 
 #main-content.dark-mode .nav-link-btn {
   color: #ffffff !important;
+}
+
+#main-content.dark-mode .store-menu-popover {
+  background: #2a2a2a;
+  border-color: #4a4a4a;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+#main-content.dark-mode .store-menu-item:hover {
+  background: #3d3d3d;
 }
 
 #main-content.dark-mode .topic-tag {
