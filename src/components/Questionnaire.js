@@ -2,36 +2,39 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 
+// Covers come from the same Supabase bucket the app and the book carousel use,
+// so a regenerated cover shows up here too. The ids are not free-form: they map
+// to the book_* boolean columns on user_onboarding and must not be renamed.
 const SWIPE_BOOKS = [
   {
     id: 'atomic_habits',
     title: 'הרגלים אטומיים',
     author: "ג'יימס קליר",
-    image: `${process.env.PUBLIC_URL}/images/books/atomic-habits.png`,
+    image: 'https://ddvxhpznbncxctroluwf.supabase.co/storage/v1/object/public/book-covers/c5c4b277-cc1c-48af-b182-1833c7dbeb77/cover.webp',
   },
   {
     id: 'rich_dad',
     title: 'אבא עשיר אבא עני',
     author: "רוברט ט' קיוסאקי",
-    image: `${process.env.PUBLIC_URL}/images/books/rich-dad.png`,
+    image: 'https://ddvxhpznbncxctroluwf.supabase.co/storage/v1/object/public/book-covers/cddd43d4-afcd-4fb3-8f5c-8f6959e9af3f/cover.webp',
   },
   {
     id: 'idiots',
     title: 'מוקף באידיוטים',
     author: 'תומס אריקסון',
-    image: `${process.env.PUBLIC_URL}/images/books/idiots.png`,
+    image: 'https://ddvxhpznbncxctroluwf.supabase.co/storage/v1/object/public/book-covers/8f3552da-aaae-4f07-8a5a-2869a20619c6/cover.webp',
   },
   {
     id: 'think_grow_rich',
     title: 'חשוב והתעשר',
     author: 'נפוליאון היל',
-    image: `${process.env.PUBLIC_URL}/images/books/think-grow-rich.png`,
+    image: 'https://ddvxhpznbncxctroluwf.supabase.co/storage/v1/object/public/book-covers/d5468dd4-1ebf-4ea1-b7f0-00bc59b610b9/cover.webp',
   },
   {
     id: 'alchemist',
     title: 'האלכימאי',
     author: 'פאולו קואלו',
-    image: `${process.env.PUBLIC_URL}/images/books/alchemist.png`,
+    image: 'https://ddvxhpznbncxctroluwf.supabase.co/storage/v1/object/public/book-covers/7e1de6bf-19f7-40bc-8d30-6aa7a351302b/cover.webp',
   },
 ];
 

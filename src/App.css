@@ -1261,6 +1261,27 @@ nav {
   border: 2px solid #14B8A6;
 }
 
+/* Placeholder cards shown while the library loads from Supabase, so the
+   carousel keeps its height instead of popping in. */
+.book-card-skeleton {
+  height: 280px;
+  cursor: default;
+  background-image: linear-gradient(100deg, #eeeeee 30%, #f7f7f7 50%, #eeeeee 70%);
+  background-size: 200% 100%;
+  animation: book-skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.book-card-skeleton:hover {
+  transform: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-color: transparent;
+}
+
+@keyframes book-skeleton-shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
 .book-cover {
   width: 100%;
   height: auto;

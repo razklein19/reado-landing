@@ -92,7 +92,7 @@ function BookCard({ book }) {
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleCardClick}
     >
-      <img className="book-cover" src={book.image} alt={book.title} />
+      <img className="book-cover" src={book.image} alt={book.title} loading="lazy" />
       <div className="book-info">
         <div className="book-title">{book.title}</div>
         <div className="book-author">{book.author}</div>
