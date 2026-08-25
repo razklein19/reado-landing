@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import BookCard from './BookCard';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import AppStoreBadges from './AppStoreBadges';
-import { CATEGORY_TABS, fetchPublishedBooks } from '../lib/books';
+import { CATEGORY_TABS, POPULAR_BOOK_IDS, fetchPublishedBooks } from '../lib/books';
 
-const ALL = 'all';
+const POPULAR = 'popular';
 
 function Topics() {
-  const [activeCategory, setActiveCategory] = useState(ALL);
+  const [activeCategory, setActiveCategory] = useState(POPULAR);
   const [books, setBooks] = useState([]);
   const [status, setStatus] = useState('loading');
   const [ref, isVisible] = useScrollAnimation(0.1);
@@ -32,16 +32,27 @@ function Topics() {
     return () => { cancelled = true; };
   }, []);
 
+  // Ordered by the shelf, not by publish date, and silently skipping any id
+  // that no longer resolves to a published book.
+  const popularBooks = POPULAR_BOOK_IDS
+    .map(id => books.find(book => book.id === id))
+    .filter(Boolean);
+
   // Only offer a tab that actually has something behind it — otherwise an
   // empty category would sit there as a dead end.
   const categories = [
-    { id: ALL, name: 'הכל', icon: 'popular-icon.png' },
+    ...(popularBooks.length ? [{ id: POPULAR, name: 'פופולרי', icon: 'popular-icon.png' }] : []),
     ...CATEGORY_TABS.filter(tab => books.some(book => book.categories.includes(tab.id)))
   ];
 
-  const filteredBooks = activeCategory === ALL
-    ? books
-    : books.filter(book => book.categories.includes(activeCategory));
+  // Guards the case where the shelf empties out and the default tab vanishes.
+  const activeTab = categories.some(c => c.id === activeCategory)
+    ? activeCategory
+    : categories[0]?.id;
+
+  const filteredBooks = activeTab === POPULAR
+    ? popularBooks
+    : books.filter(book => book.categories.includes(activeTab));
 
   return (
     <section className={`topics fade-in-up ${isVisible ? 'visible' : ''}`} ref={ref}>
@@ -55,7 +66,7 @@ function Topics() {
               {categories.map(category => (
                 <div
                   key={category.id}
-                  className={`topic-tag ${activeCategory === category.id ? 'active' : ''}`}
+                  className={`topic-tag ${activeTab === category.id ? 'active' : ''}`}
                   onClick={() => setActiveCategory(category.id)}
                 >
                   <span className="topic-icon">

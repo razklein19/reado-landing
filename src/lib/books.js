@@ -10,6 +10,19 @@ export const CATEGORY_TABS = [
   { id: 'קריירה וניהול עצמי', name: 'קריירה וניהול עצמי', icon: 'career-icon.png' }
 ];
 
+// The first tab is a hand-picked shelf: there is no popularity signal on a
+// marketing page, so pretending to compute one would be a lie. Ids are books.id
+// in Supabase; a book that gets unpublished or deleted just drops off the shelf
+// instead of breaking it, and the tab renders in the order listed here.
+export const POPULAR_BOOK_IDS = [
+  'c5c4b277-cc1c-48af-b182-1833c7dbeb77', // הרגלים אטומיים
+  'cddd43d4-afcd-4fb3-8f5c-8f6959e9af3f', // אבא עשיר אבא עני
+  'd5468dd4-1ebf-4ea1-b7f0-00bc59b610b9', // חשוב והתעשר
+  '8f3552da-aaae-4f07-8a5a-2869a20619c6', // מוקף באידיוטים
+  'c101a0ea-5bcf-43ad-b21e-6336c6a85df5', // הפסיכולוגיה של הכסף
+  '7009bcaa-0a62-4e98-b3e4-7afb453898ac'  // חוכמת האדישות
+];
+
 const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL;
 const SUPABASE_ANON_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY;
 
