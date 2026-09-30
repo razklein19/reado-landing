@@ -4,12 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Related Repositories
 
-This project is part of the Reado product and works alongside:
-
-- **Landing page** (this repo): `C:\Users\razkl\reado-landing` — reado.co.il
-- **Main app** (mind-growth-oasis): `C:\Users\razkl\mind-growth-oasis` — GitHub: https://github.com/razklein19/mind-growth-oasis.git — reado-il.com
-
-When working on this project, you have access to both repos and should consider changes in the context of both.
+This project is the landing page (reado.co.il) for the Reado mobile apps. The apps are distributed only through the App Store and Google Play; there is no web app (reado-il.com has been taken offline).
 
 ---
 
@@ -48,7 +43,7 @@ The app follows a simple component-based architecture with a single-page layout:
 **Header** (src/components/Header.js)
 - Navigation bar with logo and links
 - Hebrew RTL text
-- Links to external Reado site (https://reado-il.com)
+- Download links to the App Store and Google Play (`src/appLinks.js`)
 
 **Hero** (src/components/Hero.js)
 - Hero section with headline and CTA
@@ -93,8 +88,8 @@ The entire site is in Hebrew and uses RTL layout. When making layout changes:
 - Flexbox/Grid direction flows right-to-left
 - Margin/padding may need RTL-aware adjustments
 
-### External Links
-All CTAs and navigation buttons link to `https://reado-il.com` - the main Reado application.
+### Download Links
+All download CTAs link to the App Store / Google Play URLs defined in `src/appLinks.js`.
 
 ### Create React App
 This project uses standard Create React App configuration:
