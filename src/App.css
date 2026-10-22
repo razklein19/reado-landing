@@ -2056,6 +2056,22 @@ body.high-contrast {
   filter: contrast(1.5);
 }
 
+#main-content.grayscale {
+  filter: grayscale(1);
+}
+
+#main-content.black-white {
+  filter: grayscale(1) contrast(2);
+}
+
+#main-content.high-contrast.grayscale {
+  filter: grayscale(1) contrast(1.5);
+}
+
+#main-content.high-contrast.black-white {
+  filter: grayscale(1) contrast(3);
+}
+
 #main-content.dark-mode {
   background-color: #1a1a1a;
   color: #ffffff;
